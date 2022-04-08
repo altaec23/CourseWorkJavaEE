@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation (group: 'org.postgresql', name: 'postgresql', version: '42.2.5')
+    implementation group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.5.2.Final'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation('ch.qos.logback:logback-classic:1.2.3')
+    implementation('ch.qos.logback:logback-core:1.2.3')
+
+    implementation('org.slf4j:slf4j-api:1.7.30')
+
+    // https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1
+    implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+
+}
+
+test {
+    useJUnitPlatform()
+}
