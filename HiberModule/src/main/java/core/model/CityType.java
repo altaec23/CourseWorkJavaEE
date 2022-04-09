@@ -1,4 +1,4 @@
-package model;
+package core.model;
 
 /**
  * @author alekseev.a

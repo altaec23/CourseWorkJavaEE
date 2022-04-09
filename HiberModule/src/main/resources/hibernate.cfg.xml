@@ -15,9 +15,9 @@
         <property name="hibernate.connection.password">postgres</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
-        <mapping class="model.CityType"/>
-        <mapping class="model.City"/>
-        <mapping class="model.User"/>
+        <mapping class="core.model.CityType"/>
+        <mapping class="core.model.City"/>
+        <mapping class="core.model.User"/>
 
 
     </session-factory>

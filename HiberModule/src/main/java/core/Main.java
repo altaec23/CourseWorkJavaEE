@@ -1,5 +1,7 @@
-import model.City;
-import model.User;
+package core;
+
+import core.model.City;
+import core.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
