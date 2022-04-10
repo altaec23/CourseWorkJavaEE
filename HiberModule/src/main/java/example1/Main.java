@@ -1,6 +1,7 @@
 package example1;
 
 import example1.dao.CarDao;
+import example1.dao.CarEmDao;
 import example1.model.Car;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -8,6 +9,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.List;
 
 
@@ -17,7 +20,7 @@ import java.util.List;
  */
 public class Main {
 
-    public static CarDao carDao;
+    public static CarEmDao carDao;
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
@@ -27,19 +30,14 @@ public class Main {
 
     public static void createAnnotationContext() {
         log.info("Hello");
-        var serviceRegistry = new StandardServiceRegistryBuilder()
-                .configure("hibernate.cfg.xml").build();
-        var metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
-        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-        carDao = new CarDao(sessionFactory);
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("first_unit");
+        carDao = new CarEmDao(entityManagerFactory);
     }
 
     static void useCarDao() {
-        Car car = carDao.createRecord(new Car("jiguli"));
-        car.setModel("newJiguli");
-        carDao.updateRecord(car);
-        List<Car> resultList = carDao.findAll();
-        System.out.println("car1 = " + resultList);
+        Car car = new Car("niva");
+        carDao.saveCar(car);
+
     }
 
 

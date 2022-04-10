@@ -3,9 +3,12 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="first_unit">
+    <persistence-unit name="second_unit">
         <description>Hibernate EntityManager Demo</description>
-        <class>example1.model.Car</class>
+        <class>example2.model.Student</class>
+        <class>example2.model.Discipline</class>
+        <class>example2.model.Group</class>
+        <class>example2.model.ContactInfo</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
@@ -16,6 +19,7 @@
             <property name="hibernate.connection.username" value="postgres"/>
             <property name="hibernate.connection.password" value="postgres"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>
