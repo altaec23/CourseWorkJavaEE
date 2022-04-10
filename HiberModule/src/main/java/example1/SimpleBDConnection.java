@@ -1,6 +1,6 @@
-package core;
+package example1;
 
-import core.model.User;
+import example1.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
