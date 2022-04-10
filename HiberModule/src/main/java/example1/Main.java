@@ -1,17 +1,14 @@
 package example1;
 
-import example1.dao.CarDao;
+
 import example1.dao.CarEmDao;
 import example1.model.Car;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.List;
 
 
 /**

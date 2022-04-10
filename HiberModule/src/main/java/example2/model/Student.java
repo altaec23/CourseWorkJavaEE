@@ -40,16 +40,16 @@ import static javax.persistence.GenerationType.IDENTITY;
         @NamedQuery(name = "Student.findAll", query = "select s from Student s"),
         @NamedQuery(name = "Student.findById",
                 query = "select distinct s from Student s left join fetch s.disciplines d where s.id = :id"),
-        @NamedQuery(name="Student.findAllWithDisciplines",
-                query="select s from Student s left join fetch s.disciplines d"),
-        @NamedQuery(name="Student.findAllWithContact",
-                query="select s from Student s inner join fetch s.contact c")
+        @NamedQuery(name = "Student.findAllWithDisciplines",
+                query = "select s from Student s left join fetch s.disciplines d"),
+        @NamedQuery(name = "Student.findAllWithContact",
+                query = "select s from Student s inner join fetch s.contact c")
 })
 @SqlResultSetMapping(
         name = "nativeSqlResult",
         entities = @EntityResult(entityClass = Student.class)
 )
-public class Student  {
+public class Student {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -60,7 +60,7 @@ public class Student  {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "student_discipline",
             joinColumns = {@JoinColumn(name = "student")},
-            inverseJoinColumns = {@JoinColumn(name="discipline")})
+            inverseJoinColumns = {@JoinColumn(name = "discipline")})
     @Builder.Default
     private Set<Discipline> disciplines = new HashSet<>();
 
