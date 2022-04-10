@@ -1,5 +1,4 @@
-package core.model;
-
+package example1.model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,8 +15,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "city")
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -25,6 +24,9 @@ public class User {
 
     @Column(length = 128, nullable = false)
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private CityType type;
 
 
 }

@@ -12,7 +12,7 @@
     <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>
-    <logger name="log4jdbc.log4j2" level="error" additivity="false">
+    <logger name="log4jdbc.log4j2" level="info" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 

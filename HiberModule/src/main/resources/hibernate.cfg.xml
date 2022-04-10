@@ -9,15 +9,16 @@
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
 
         <!-- Database Connection Settings -->
-        <property name="hibernate.connection.driver_class">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</property>
-        <property name="hibernate.connection.url">jdbc:log4jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <!-- <property name="show_sql">true</property> -->
-        <mapping class="core.model.CityType"/>
-        <mapping class="core.model.City"/>
-        <mapping class="core.model.User"/>
+        <property name="show_sql">true</property>
+        <mapping class="example1.model.Car"/>
+        <mapping class="example1.model.CityType"/>
+        <mapping class="example1.model.City"/>
+        <mapping class="example1.model.User"/>
 
 
     </session-factory>
