@@ -1,4 +1,5 @@
 rootProject.name = 'CourseWorkJavaEE'
 include 'HiberModule'
 include 'db'
+include 'SpringMVC'
 
