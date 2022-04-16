@@ -12,6 +12,18 @@ Liquibase (snakeyaml:1.26), lombok:1.18, slf4j:1.7 + jdbc4.1:(1.16)
 
 // Описание запуска проекта, стек //
 
+### SpringBootStarter
+
+**Стек:**
+Spring Boot Starter Data Jpa + Java16 + Postgres (42.2.5) <br>
+
+**Other:**
+jstl , lombok:1.18, TomCat 9.0.46
+
+
+---
+
+
 ### SpringMVC
 
 **Стек:**
